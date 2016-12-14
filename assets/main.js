@@ -9,14 +9,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   function addCourses(courses) {
+    badgesDiv = document.getElementById('badges');
     courses.forEach(course => {
-      console.log(course);
       var courseDiv = document.createElement('div');
-      console.log(courseDiv);
       courseDiv.setAttribute('class', 'course');
-      courseDiv.innerHTML = course.title;
-      document.getElementById('badges')
-              .appendChild(courseDiv);
+      var h3 = document.createElement('h3');
+      h3.innerText = course.title;
+      courseDiv.appendChild(h3);
+
+
+      // finally add the element
+      badgesDiv.appendChild(courseDiv);
     });
   }
 
